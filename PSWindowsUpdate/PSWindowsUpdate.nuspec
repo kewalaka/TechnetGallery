@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>PSWindowsUpdate</id>
+    <version>1.6.1.1</version>
+    <authors>Michal Gajda</authors>
+    <owners>Michal Gajda</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>This module contain functions to manage Windows Update Client.</description>
+    <releaseNotes />
+    <copyright>(c) 2011 Michal Gajda. All rights reserved.</copyright>
+    <tags>PSModule PSIncludes_Function PSFunction_Add-WUOfflineSync PSFunction_Get-WUHistory PSFunction_Get-WUInstall PSFunction_Get-WUInstallerStatus PSFunction_Get-WUList PSFunction_Get-WURebootStatus PSFunction_Get-WUServiceManager PSFunction_Get-WUUninstall PSFunction_Hide-WUUpdate PSFunction_Invoke-WUInstall PSFunction_Remove-WUOfflineSync PSFunction_Add-WUServiceManager PSFunction_Remove-WUServiceManager PSFunction_Get-WUAPIVersion PSFunction_Get-WULastResults PSFunction_Start-WUDetectNow PSFunction_Start-WUService PSFunction_Get-WUSettings PSFunction_Set-WUSettings PSCommand_Add-WUOfflineSync PSCommand_Get-WUHistory PSCommand_Get-WUInstall PSCommand_Get-WUInstallerStatus PSCommand_Get-WUList PSCommand_Get-WURebootStatus PSCommand_Get-WUServiceManager PSCommand_Get-WUUninstall PSCommand_Hide-WUUpdate PSCommand_Invoke-WUInstall PSCommand_Remove-WUOfflineSync PSCommand_Add-WUServiceManager PSCommand_Remove-WUServiceManager PSCommand_Get-WUAPIVersion PSCommand_Get-WULastResults PSCommand_Start-WUDetectNow PSCommand_Start-WUService PSCommand_Get-WUSettings PSCommand_Set-WUSettings PSCommand_Install-WindowsUpdate PSCommand_Uninstall-WindowsUpdate PSCommand_Get-WindowsUpdate PSCommand_Hide-WindowsUpdate</tags>
+  </metadata>
+</package>
