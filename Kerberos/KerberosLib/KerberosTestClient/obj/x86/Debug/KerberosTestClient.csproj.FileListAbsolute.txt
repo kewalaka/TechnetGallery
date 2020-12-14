@@ -1,0 +1,8 @@
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\bin\Debug\KerberosTestClient.exe
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\bin\Debug\KerberosTestClient.pdb
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\bin\Debug\KerberosLib.dll
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\bin\Debug\KerberosLib.pdb
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\obj\x86\Debug\KerberosTestClient.exe
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\obj\x86\Debug\KerberosTestClient.pdb
+C:\Users\administrator\Desktop\Kerberos\KerberosTestClient\bin\Debug\KerberosTestClient.exe.config

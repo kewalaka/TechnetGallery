@@ -1,0 +1,10 @@
+C:\Users\administrator\Desktop\Kerberos2\KerberosLib\bin\Debug\KerberosLib.dll
+C:\Users\administrator\Desktop\Kerberos2\KerberosLib\bin\Debug\KerberosLib.pdb
+C:\Users\administrator\Desktop\Kerberos2\KerberosLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\administrator\Desktop\Kerberos2\KerberosLib\obj\Debug\KerberosLib.dll
+C:\Users\administrator\Desktop\Kerberos2\KerberosLib\obj\Debug\KerberosLib.pdb
+C:\Users\administrator\Desktop\Kerberos\KerberosLib\bin\Debug\KerberosLib.dll
+C:\Users\administrator\Desktop\Kerberos\KerberosLib\bin\Debug\KerberosLib.pdb
+C:\Users\administrator\Desktop\Kerberos\KerberosLib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\administrator\Desktop\Kerberos\KerberosLib\obj\Debug\KerberosLib.dll
+C:\Users\administrator\Desktop\Kerberos\KerberosLib\obj\Debug\KerberosLib.pdb
