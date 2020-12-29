@@ -25,24 +25,15 @@ function Convert-OUPathToLDAPString
 
     $OUsplit = [array]$OUPath.split('/')
 
-    $convertedOU = ""
+    # this is the root domain object
+    # prepend with dc= & change '.' to dc=
+    $convertedOU = "dc=$($Ousplit[0].Replace(".",",dc="))"
 
-    # using for interator explicitly rather than foreach to have access to current object easily
-    # and ensure order
-    for ($i=0; $i -lt $OUSplit.Count; $i++)
+    for ($i=1; $i -lt $OUSplit.Count; $i++)
     {
-        if ($i -eq 0)
-        {
-            # this is the root domain object
-            # prepend with dc= & change '.' to dc=
-            $convertedOU = "dc=$($Ousplit[$i].Replace(".",",dc="))"
-        }
-        else
-        {
-            # these are OUs
-            # prepend with ou= & add to the front of the existing string
-            $convertedOU = "ou=$($OUsplit[$i])," + $convertedOU
-        }
+        # these are OUs
+        # prepend with ou= & add to the front of the existing string
+        $convertedOU = "ou=$($OUsplit[$i])," + $convertedOU
     }
 
     return $convertedOU
