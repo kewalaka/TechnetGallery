@@ -1,0 +1,65 @@
+# not well tested a little rough around the edges :)
+
+$path = 'C:\Admin\GPBackups'
+
+$gpbackups = Get-ChildItem $path -Recurse -Filter "gpreport.xml"
+
+foreach ($gpbackup in $gpbackups) {
+
+    [xml]$backupContents = Get-Content $gpbackup.FullName
+    $GPOName = $backupContents.GPO.Name
+    Write-Output "`nProcessing $GPOName - $($gpbackup.DirectoryName)"
+
+    # create OU structure contained in the backup GPOs
+    $OUs = $backupContents.GPO.LinksTo.SOMPath
+    foreach ($OU in $OUs)
+    {
+        # split the OU and created each one if it doesn't exist
+        $splitName = $OU.split("/")
+        $domainSuffix = "DC=" + $splitName[0].replace(".",",DC=")
+
+        $currentSuffix = $domainSuffix
+
+        for ($i = 1; $i -lt $splitName.Count; $i++)
+        {
+            $name = $splitName[$i]
+
+            $OUtoCheck = "OU=$name," + $currentSuffix
+            $exists = Get-ADOrganizationalUnit -Filter {distinguishedName -eq $OUtoCheck}
+            if (-not $exists)
+            {
+                New-ADOrganizationalUnit -Name $name -Path $currentSuffix # -WhatIf
+                $currentSuffix = $OUtoCheck
+            }
+            else
+            {
+                $currentSuffix = $OUtoCheck
+            }
+        }
+    }   
+
+
+    # create users / groups - TODO - can't tell the different between users and group?
+    #$backupContents.GPO.SecurityDescriptor.Permissions.TrusteePermissions.Trustee.Name.'#text'
+
+    # restore the GPO
+    #$guid = $($backupContents.GPO.Identifier.Identifier."#text").Replace("{","").Replace("}","")
+    #New-GPO -Name $backupContents.GPO.Name
+
+   # Import-GPO -BackupGpoName $GPOName -Path $Path -TargetName $GPOName -MigrationTable "$path\tdhb.migtable" -CreateIfNeeded
+
+    foreach ($OU in $OUs)
+    {
+        # split the OU and created each one if it doesn't exist
+        $splitName = $OU.split("/")
+        $domainSuffix = "DC=" + $splitName[0].replace(".",",DC=")
+
+        $OUdn = $domainSuffix
+        for ($i = 1; $i -lt $splitName.Count; $i++)
+        {
+            $OUdn = "OU=$($splitName[$i])," + $OUdn
+        }
+        
+        Set-GPLink -Name $GPOName -Target $OUdn -LinkEnabled Yes
+    }
+}
